@@ -1,7 +1,7 @@
-# Portefolio about Ada - Copycatoppgave for workshop om frontend webutvikling
+# Workshop om frontend webutvikling
 
 Denne workshopen består av 3 deler hvor vi øver på å bygge frontend med ulike verktøy. Slides fra workshop, oppgaver og eksempelkode ligger på disse linkene. 
-1. **CSS alene.** [Oppgave og slides](https://github.com/Madelelo/about-ada/blob/main/Frontend%20webutvikling%20del%201%20-%20CSS.pdf). [Eksempelkode](https://github.com/Madelelo/about-ada)
+1. **CSS alene.** [Oppgave og slides](https://github.com/Madelelo/about-ada/blob/main/Frontend%20webutvikling%20del%201%20-%20CSS.pdf). Eksempelkode ligger over her i *index.html* og *style.css*
 2. **CSS rammeverk: Bootstrap.** [Oppgave og slides. ]()[Eksempelkode](https://github.com/Madelelo/about-ada/tree/about-ada-bootstrap)
 3. **CSS rammeverk: Tailwind** (kommer)
 
