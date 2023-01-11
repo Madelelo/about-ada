@@ -1,3 +1,9 @@
+/* Bruk denne koden til å tegne opp boksene
+
 div{
     border: 1px solid red;
+} */
+
+.timeline-border{
+    border-top:4px solid rgb(0, 136, 255); 
 }
