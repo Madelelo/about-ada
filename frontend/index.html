@@ -9,7 +9,7 @@
 
 <div class="header-hero">
     <div> 
-        <h1>Ada Lovelace</h1>
+        <h1 id="name">Ada Lovelace</h1>
         <h2> Verdens første programmeringsnørd. </h2>
         <p> London, England</p>
        <div style="display: flex; flex-direction:row;">
@@ -20,82 +20,26 @@
 
 </div>
 
+<script>
+    //SANITY CONNECTION 
+    let PROJECT_ID = "v641yy2f";
+    let DATASET = "production";
+    let QUERY = encodeURIComponent('*[_type == "about"]');
 
-<div class="timeline">
-    <div class="timeline-event"> 
-        <div>
-            <h3>London, England</h3>
-            <h4>Ble født</h4>
-            <p>Mor: Annabelle Milbanke Far: Lord Byron </p>
-        </div>
-         <h3>1815</h3> 
-     </div>
+    // Compose the URL for your project's endpoint and add the query
+    let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
-     <div class="timeline-event"> 
-        <div>
-            <h3>London, England</h3>
-            <h4>Møtte Charles Babbage</h4>
-            <p> De ble gode venner og samarbeidspartere. </p>
-        </div>
-        <div><h3>1833</h3></div>
-     </div>
+    fetch(URL)
+        .then((response) => { 
+            return response.json()
+        })
+        .then((data) => {console.log(data.result[0])
+            const setName = document.getElementById('name');
+            setName.innerHTML = data.result[0].name;
 
-     <div class="timeline-event"> 
-        <div>
-            <h3>London, England</h3>
-            <h4>Publiserte Sketch of the Analytical Engine</h4>
-            <p> Regnes som verdens første algoritme. </p>
-        </div>
-        <div><h3>1843</h3></div>
-     </div>
-
-     <div class="timeline-event"> 
-        <div>
-            <h3>Marylebone, England</h3>
-            <h4>Døde av sykdom</h4>
-            <p> Kun 37 år gammel </p>
-        </div>
-        <h3> 1852</h3>
-     </div>
-
-     <div class="timeline-event"> 
-        <div>
-            <h3>Washington DC, USA</h3>
-            <h4>Programmeringsspråket Ada</h4>
-            <p> Dem amerikanske regjeringen bestemmer seg for å oppkalle et programmeringsspråk etter Ada.  </p>
-        </div>
-        <h3> 1983</h3>
-     </div>
-    
-</div>
-
-<div class="project-cards">
-    <div class="card-element"> 
-        <h3>London, England</h3>
-        <h2> Samarbeidet med Charles Babbage</h2>
-        <p>  Charles Babbage var en matematiker og ingeniør som utviklet ideen om den første analysen maskinen, en mekanisk datamaskin som kunne utføre aritmetiske operasjoner. </p>
-        <p>1833-1843</p>
-    </div>
-    
-    <div class="card-element"> 
-        <h3>England og Italia</h3>
-        <h2> Det første dataprogrammet</h2>
-        <p> Ada Lovelace skrev en artikkel kalt "Sketch of the Analytical Engine" i 1843, som beskriver muligheten for at en datamaskin kan utføre mer enn en kalkulator. Artikkelen ble sett på som en av de første beskrivelsene av datamaskinens muligheter.</p>
-        <p>1843</p>
-    </div>
-   
-    <div class="card-element"> 
-        <h3>Marylebone, England</h3>
-        <h2> Matemtikk, teknologi, kunst og litteratur</h2>
-        <p> Ada Lovelace skrev flere artikler og brev om matematikk, teknologi og vitenskap, og ble kjent som en dyktig forfatter. Hun var også interessert i kunst og litteratur, og skrev dikt og andre skrifter under pseudonymet "The Enchantress of Numbers".</p>
-        <p>1844</p>
-    </div>
-
-</div>
-
-</div>
-
-
+        })
+    </script>
+      
 </body>
 </html>
 
